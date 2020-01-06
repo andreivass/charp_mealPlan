@@ -26,16 +26,21 @@
                 <input asp-for="IngredientInRecipe.IngredientInRecipeAmount" class="form-control" />
                 <span asp-validation-for="IngredientInRecipe.IngredientInRecipeAmount" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+            </div>*@
+            <div class="btn-group btn-group-lg btn-group-md btn-group-sm" role="group" aria-label="Basic example">
+                <input type="submit" value="Create" class="btn btn-secondary" />
+                <a asp-page="../Recipes/Details" asp-route-id="@Model.RecipeId" class="btn btn-secondary">Back to List</a>
             </div>
+            
         </form>
     </div>
 </div>
 
-<div>
+@*<div>
     <a asp-page="../Recipes/Details" asp-route-id="@Model.RecipeId">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
