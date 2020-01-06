@@ -4,9 +4,23 @@
 @{
     ViewData["Title"] = "Index";
 }
-<p>
-<h3>Possible recipes to do in @(Model.Time) min or less based on your available ingredients.</h3>
+<p xmlns="http://www.w3.org/1999/html">
+    <h4>Possible recipes to do in @(Model.Time) min or less for @(Model.Servings) people based on your available ingredients.</h4>
 </p>
+
+<form class="form-inline" method="get">
+    <div>
+        Time (minutes): <input asp-for="Time" class="form-control"/>
+        Servings: <input asp-for="Servings" class="form-control"/><hr />
+        Recipe must include: <input asp-for="SearchStringYes" class="form-control"/>
+        Must not include: <input asp-for="SearchStringNo" class="form-control"/>
+        <input type="submit" value="Search" form-control class="btn btn-dark"/>
+        @*<input type="submit" value="Reset" name="onReset" class="btn btn-secondary"
+               @(string.IsNullOrWhiteSpace(Model.SearchStringYes) ? "disabled=\"disabled\"" : "")/>*@
+    </div>
+    
+</form>
+
 
 <table class="table table-hover">
     <thead class="thead-dark">
@@ -34,7 +48,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model.PossibleRecipes) {
-        <tr onclick="location.href = './Meals/Details?id=' + @item.RecipeId + '&time=' + @Model.Time;">
+    <tr onclick="location.href = './Meals/Details?id=' + 
+@item.RecipeId + '&Time=' + @Model.Time + '&Servings=' + @Model.Servings;">
             <td>
                 @Html.DisplayFor(modelItem => item.RecipeName)
             </td>

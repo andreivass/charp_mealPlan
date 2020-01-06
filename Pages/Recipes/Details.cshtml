@@ -61,6 +61,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Ingredients[0].Ingredient.IngredientUnit)
         </th>
+        <th></th>
             
     </tr>
     </thead>
@@ -76,8 +77,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Ingredient.IngredientUnit.IngredientUnitName)
             </td>
-            
-
+            <td>
+                <a asp-page="../IngredientInRecipes/Edit" asp-route-id="@item.IngredientInRecipeId">Edit</a> |
+                @*<a asp-page="../IngredientInRecipes/Details" asp-route-id="@item.IngredientInRecipeId">Details</a> |*@
+                <a asp-page="../IngredientInRecipes/Delete" asp-route-id="@item.IngredientInRecipeId">Delete</a>
+            </td>
         </tr>
     }
     </tbody>

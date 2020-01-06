@@ -26,14 +26,20 @@ namespace WebApp.Pages_Meals
         
         public int? Time { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id, int? time)
+        public string? SearchString { get; set; }
+        
+
+        public async Task<IActionResult> OnGetAsync(int? id, int time, decimal servings, string searchString)
         {
             if (id == null)
             {
                 return NotFound();
             }
             
-            Time = time > 0 ? time : 0;
+            //Servings = servings > 0 ? servings : 0;
+            Servings = servings;
+            Time = time;
+            SearchString = searchString;
 
             Recipe = await _context.RecipesType.FirstOrDefaultAsync(m => m.RecipeId == id);
 
@@ -47,6 +53,12 @@ namespace WebApp.Pages_Meals
                 .Include(i => i.Ingredient)
                 .ThenInclude(il => il.IngredientUnit)
                 .ToListAsync();
+            
+            foreach (var ingredientInRecipe in Ingredients)
+            {
+                ingredientInRecipe.IngredientInRecipeAmount =
+                    ingredientInRecipe.IngredientInRecipeAmount *  Servings / Recipe.RecipeServings;
+            }
             
             return Page();
         }
