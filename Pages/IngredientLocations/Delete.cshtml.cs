@@ -20,7 +20,7 @@ namespace WebApp.Pages_IngredientLocations
         }
 
         [BindProperty]
-        public IngredientLocation IngredientLocation { get; set; }
+        public IngredientLocation IngredientLocation { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

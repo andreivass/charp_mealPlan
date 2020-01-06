@@ -19,7 +19,7 @@ namespace WebApp.Pages_IngredientInRecipes
             _context = context;
         }
 
-        public IngredientInRecipe IngredientInRecipe { get; set; }
+        public IngredientInRecipe IngredientInRecipe { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -21,7 +21,7 @@ namespace WebApp.Pages_IngredientInRecipes
         }
 
         [BindProperty]
-        public IngredientInRecipe IngredientInRecipe { get; set; }
+        public IngredientInRecipe IngredientInRecipe { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

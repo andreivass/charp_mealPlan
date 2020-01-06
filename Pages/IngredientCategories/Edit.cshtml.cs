@@ -21,7 +21,7 @@ namespace WebApp.Pages_IngredientCategories
         }
 
         [BindProperty]
-        public IngredientCategory IngredientCategory { get; set; }
+        public IngredientCategory IngredientCategory { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

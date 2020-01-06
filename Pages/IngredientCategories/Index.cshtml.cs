@@ -19,7 +19,7 @@ namespace WebApp.Pages_IngredientCategories
             _context = context;
         }
 
-        public IList<IngredientCategory> IngredientCategory { get;set; }
+        public IList<IngredientCategory> IngredientCategory { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

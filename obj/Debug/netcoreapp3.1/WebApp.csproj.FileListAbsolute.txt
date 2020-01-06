@@ -165,11 +165,6 @@ C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Ingre
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\IngredientUnits\Details.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\IngredientUnits\Edit.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\IngredientUnits\Index.cshtml.g.cs
-C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Create.cshtml.g.cs
-C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Delete.cshtml.g.cs
-C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Details.cshtml.g.cs
-C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Edit.cshtml.g.cs
-C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Index.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\IngredientInRecipes\Create.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\IngredientInRecipes\Delete.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\IngredientInRecipes\Details.cshtml.g.cs
@@ -180,3 +175,8 @@ C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Ingre
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Ingredients\Details.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Ingredients\Edit.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Ingredients\Index.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Create.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Delete.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Details.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Edit.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Index.cshtml.g.cs

@@ -5,16 +5,29 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Recipes</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-dark">Create New</a>
 </p>
-<table class="table">
-    <thead>
+
+<form class="form-inline" method="get">
+    <div class="form-group">
+        Search by name: <input type="text" value="@Model.SearchString" asp-for="SearchString" class="form-control"/>
+        <input type="submit" value="Search" form-control class="btn btn-dark"/>
+        <input type="submit" value="Reset" name="onReset" class="btn btn-secondary"
+               @(string.IsNullOrWhiteSpace(Model.SearchString) ? "disabled=\"disabled\"" : "")/>
+    </div>
+</form>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recipe[0].RecipeDescription)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeTime)
@@ -22,14 +35,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeServings)
             </th>
-            <th></th>
+
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Recipe) {
-        <tr>
+        <tr onclick="location.href = './Recipes/Details?id=' + @item.RecipeId;">
             <td>
                 @Html.DisplayFor(modelItem => item.RecipeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeDescription)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RecipeTime)
@@ -37,11 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.RecipeServings)
             </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.RecipeId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.RecipeId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.RecipeId">Delete</a>
-            </td>
+
         </tr>
 }
     </tbody>

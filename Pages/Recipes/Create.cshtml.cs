@@ -24,8 +24,7 @@ namespace WebApp.Pages_Recipes
             return Page();
         }
 
-        [BindProperty]
-        public Recipe Recipe { get; set; }
+        [BindProperty] public Recipe Recipe { get; set; } = default!;
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.

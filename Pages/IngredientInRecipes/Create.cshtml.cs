@@ -27,7 +27,7 @@ namespace WebApp.Pages_IngredientInRecipes
         }
 
         [BindProperty]
-        public IngredientInRecipe IngredientInRecipe { get; set; }
+        public IngredientInRecipe IngredientInRecipe { get; set; } = default!;
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.

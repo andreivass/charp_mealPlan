@@ -5,9 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h2>Edit recipe</h2>
 
-<h4>Recipe</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,6 +19,11 @@
                 <span asp-validation-for="Recipe.RecipeName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Recipe.RecipeDescription" class="control-label"></label>
+                <input asp-for="Recipe.RecipeDescription" class="form-control" />
+                <span asp-validation-for="Recipe.RecipeDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Recipe.RecipeTime" class="control-label"></label>
                 <input asp-for="Recipe.RecipeTime" class="form-control" />
                 <span asp-validation-for="Recipe.RecipeTime" class="text-danger"></span>
@@ -30,8 +34,9 @@
                 <span asp-validation-for="Recipe.RecipeServings" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-secondary" />
             </div>
+            
         </form>
     </div>
 </div>

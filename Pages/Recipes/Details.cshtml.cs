@@ -19,7 +19,7 @@ namespace WebApp.Pages_Recipes
             _context = context;
         }
 
-        public Recipe Recipe { get; set; }
+        public Recipe Recipe { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

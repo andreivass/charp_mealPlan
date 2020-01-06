@@ -19,7 +19,7 @@ namespace WebApp.Pages_IngredientUnits
             _context = context;
         }
 
-        public IList<IngredientUnit> IngredientUnit { get;set; }
+        public IList<IngredientUnit> IngredientUnit { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

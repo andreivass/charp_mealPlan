@@ -19,7 +19,7 @@ namespace WebApp.Pages_IngredientCategories
             _context = context;
         }
 
-        public IngredientCategory IngredientCategory { get; set; }
+        public IngredientCategory IngredientCategory { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

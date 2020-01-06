@@ -25,7 +25,7 @@ namespace WebApp.Pages_IngredientCategories
         }
 
         [BindProperty]
-        public IngredientCategory IngredientCategory { get; set; }
+        public IngredientCategory IngredientCategory { get; set; } = default!;
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.

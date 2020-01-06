@@ -19,7 +19,7 @@ namespace WebApp.Pages_IngredientLocations
             _context = context;
         }
 
-        public IList<IngredientLocation> IngredientLocation { get;set; }
+        public IList<IngredientLocation> IngredientLocation { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
