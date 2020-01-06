@@ -21,11 +21,12 @@ namespace WebApp.Pages_Recipes
 
         public IActionResult OnGet()
         {
+            
             return Page();
         }
 
         [BindProperty] public Recipe Recipe { get; set; } = default!;
-
+        
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()

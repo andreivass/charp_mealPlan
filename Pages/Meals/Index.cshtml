@@ -1,0 +1,54 @@
+﻿@page
+@model WebApp.Pages_Meals.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+<h3>Possible recipes to do in @(Model.Time) min or less based on your available ingredients.</h3>
+</p>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+            
+                @Html.DisplayNameFor(model => model.PossibleRecipes[0].RecipeName)
+            
+            </th>
+            <th>
+                
+                @Html.DisplayNameFor(model => model.PossibleRecipes[0].RecipeDescription)
+                
+            </th>
+            <th>
+                
+                @Html.DisplayNameFor(model => model.PossibleRecipes[0].RecipeTime)
+                
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Recipe[0].RecipeServings)
+            </th>*@
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PossibleRecipes) {
+        <tr onclick="location.href = './Meals/Details?id=' + @item.RecipeId + '&time=' + @Model.Time;">
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeTime)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RecipeServings)
+            </td>*@
+
+        </tr>
+}
+    </tbody>
+</table>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DAL;
 using Domain;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace WebApp.Pages_IngredientInRecipes
 {
@@ -19,8 +20,9 @@ namespace WebApp.Pages_IngredientInRecipes
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int? recipeId)
         {
+            RecipeId = recipeId > 0 ? recipeId : 0;
         ViewData["IngredientId"] = new SelectList(_context.Ingredients, "IngredientId", "IngredientName");
         ViewData["RecipeId"] = new SelectList(_context.RecipesType, "RecipeId", "RecipeName");
             return Page();
@@ -28,6 +30,8 @@ namespace WebApp.Pages_IngredientInRecipes
 
         [BindProperty]
         public IngredientInRecipe IngredientInRecipe { get; set; } = default!;
+
+        public int? RecipeId { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -40,7 +44,12 @@ namespace WebApp.Pages_IngredientInRecipes
 
             _context.IngredientInRecipes.Add(IngredientInRecipe);
             await _context.SaveChangesAsync();
-
+            
+            // TODO: redirect back to recipe
+            if (RecipeId > 0)
+            {
+                return RedirectToPage("../Recipes/Details?id=" + RecipeId);
+            }
             return RedirectToPage("./Index");
         }
     }

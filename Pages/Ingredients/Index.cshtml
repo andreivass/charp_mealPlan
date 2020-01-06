@@ -27,6 +27,10 @@
                 @Html.DisplayNameFor(model => model.Ingredient[0].IngredientName)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Ingredient[0].IngredientUnit)
+            </th>
+            
+            <th>
                 @Html.DisplayNameFor(model => model.Ingredient[0].IngredientAmount)
             </th>
             <th>
@@ -35,9 +39,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Ingredient[0].IngredientLocation)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ingredient[0].IngredientUnit)
-            </th>
+            
 
         </tr>
     </thead>
@@ -48,6 +50,10 @@
                 @Html.DisplayFor(modelItem => item.IngredientName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.IngredientUnit.IngredientUnitName)
+            </td>
+            
+            <td>
                 @Html.DisplayFor(modelItem => item.IngredientAmount)
             </td>
             <td>
@@ -56,9 +62,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.IngredientLocation.IngredientUnitName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IngredientUnit.IngredientUnitName)
-            </td>
+            
 
         </tr>
 }

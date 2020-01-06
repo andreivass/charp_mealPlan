@@ -20,11 +20,18 @@ namespace WebApp.Pages
 
         public IActionResult OnGet()
         {
+            /*if (!string.IsNullOrEmpty(SearchString))
+            {
+                return RedirectToPage("./Meals/Meals?SearchString" + Recipe.RecipeTime);
+            }*/
             return Page();
         }
 
         [BindProperty]
         public Recipe Recipe { get; set; } = default!;
+        
+        [BindProperty] public string? Servings { get; set; }
+        [BindProperty] public decimal? Time { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -38,7 +45,7 @@ namespace WebApp.Pages
             _context.RecipesType.Add(Recipe);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage(".Index");
         }
     }
 }

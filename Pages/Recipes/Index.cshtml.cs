@@ -16,6 +16,11 @@ namespace WebApp.Pages_Recipes
         
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
+        
+        public string? SortName { get; set; }
+        public string? SortDescription { get; set; }
+        public string? SortTime { get; set; }
+        public string? SortServings { get; set; }
 
         public IndexModel(DAL.AppDbContext context)
         {
@@ -24,9 +29,40 @@ namespace WebApp.Pages_Recipes
 
         public IList<Recipe> Recipe { get;set; } = default!;
 
-        public async Task OnGetAsync(string? onReset)
+        public async Task OnGetAsync(string? onReset, string? sortOrder)
         {
-            Recipe = await _context.RecipesType.ToListAsync();
+            SortName = string.IsNullOrEmpty(sortOrder) ? "name_sort" : "";
+            SortDescription = sortOrder == "desc_sort" ? "desc_desc" : "desc_sort";
+            SortTime = sortOrder == "time_sort" ? "time_desc" : "time_sort";
+
+            switch (@sortOrder)
+            {
+                case "desc_sort":
+                    Recipe = await _context.RecipesType
+                        .OrderBy(s => s.RecipeDescription).ToListAsync();
+                    break;
+                case "desc_desc":
+                    Recipe = await _context.RecipesType
+                        .OrderByDescending(s => s.RecipeDescription).ToListAsync();
+                    break;
+                case "time_sort":
+                    Recipe = await _context.RecipesType
+                        .OrderBy(s => s.RecipeTime).ToListAsync();
+                    break;
+                case "time_desc":
+                    Recipe = await _context.RecipesType
+                        .OrderByDescending(s => s.RecipeTime).ToListAsync();
+                    break;
+                case "name_sort":
+                    Recipe = await _context.RecipesType
+                        .OrderByDescending(s => s.RecipeName).ToListAsync();
+                    break;
+                default:
+                    Recipe = await _context.RecipesType
+                        .OrderBy(s => s.RecipeName).ToListAsync();
+                    break;
+            }
+            
             
             if (onReset == "Reset")
             {

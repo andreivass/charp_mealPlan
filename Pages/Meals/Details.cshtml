@@ -1,14 +1,14 @@
-@page
-@model WebApp.Pages_Recipes.DetailsModel
+﻿@page
+@model WebApp.Pages_Meals.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h2>Recipe details</h2>
+<h2>Meal details</h2>
 
 <div>
-    <h4>Recipe</h4>
+    
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -37,35 +37,39 @@
         </dd>
     </dl>
 </div>
-@*<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Recipe.RecipeId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>*@
-<div class="btn-group btn-group-lg btn-group-md btn-group-sm" role="group" aria-label="Basic example">
-    <a asp-page="./Edit" asp-route-id="@Model.Recipe.RecipeId" class="btn btn-secondary">Edit</a>
-    <a asp-page="./Delete" asp-route-id="@Model.Recipe.RecipeId" class="btn btn-secondary">Delete</a>
-    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
-</div>
-<hr />
-<h3>Ingredients</h3>
-<hr />
+
+@*<form method="get" asp-page="/Meals/Index">*@
+<form method="get" asp-page="/Meals/Index">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+    <div class="form-group">
+        <label class="control-label">How many people are hungry?</label>
+        <input asp-for="Servings" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Calculate amounts" class="btn btn-secondary btn-group-sm" />
+    </div>
+</form>
+
+
+
 <table class="table table-hover">
     <thead class="thead-dark">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ingredients[0].Ingredient)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ingredients[0].IngredientInRecipeAmount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ingredients[0].Ingredient.IngredientUnit)
-        </th>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredients[0].Ingredient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredients[0].IngredientInRecipeAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredients[0].Ingredient.IngredientUnit)
+            </th>
             
-    </tr>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Ingredients) {
+@foreach (var item in Model.Ingredients) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Ingredient.IngredientName)
@@ -79,10 +83,12 @@
             
 
         </tr>
-    }
+}
     </tbody>
 </table>
-<div class="btn-group btn-group-lg btn-group-md btn-group-sm" role="group" aria-label="Basic example">
-    <a asp-page="../IngredientInRecipes/Create" asp-route-recipeId="@Model.Recipe.RecipeId" class="btn btn-secondary">Add ingredient</a>
 
+<div class="btn-group btn-group-lg btn-group-md btn-group-sm" role="group" aria-label="Basic example">
+    @*<a asp-page="./Edit" asp-route-id="@Model.Recipe.RecipeId" class="btn btn-secondary">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@Model.Recipe.RecipeId" class="btn btn-secondary">Delete</a>*@
+    <a asp-page="./Index" asp-route-Time="@Model.Time" class="btn btn-secondary">Back to List</a>
 </div>

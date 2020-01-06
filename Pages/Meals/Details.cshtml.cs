@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DAL;
 using Domain;
 
-namespace WebApp.Pages_Recipes
+namespace WebApp.Pages_Meals
 {
     public class DetailsModel : PageModel
     {
@@ -18,21 +18,24 @@ namespace WebApp.Pages_Recipes
         {
             _context = context;
         }
-
-        public Recipe Recipe { get; set; } = default!;
         
         public IList<IngredientInRecipe> Ingredients { get;set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public Recipe Recipe { get; set; } = default!;
+        public decimal Servings { get; set; }
+        
+        public int? Time { get; set; }
+
+        public async Task<IActionResult> OnGetAsync(int? id, int? time)
         {
             if (id == null)
             {
                 return NotFound();
             }
+            
+            Time = time > 0 ? time : 0;
 
             Recipe = await _context.RecipesType.FirstOrDefaultAsync(m => m.RecipeId == id);
-
-            
 
             if (Recipe == null)
             {

@@ -5,13 +5,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h2>Units</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-dark">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.IngredientUnit[0].IngredientUnitName)

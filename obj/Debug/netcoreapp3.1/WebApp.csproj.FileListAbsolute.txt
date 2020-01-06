@@ -180,3 +180,5 @@ C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recip
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Details.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Edit.cshtml.g.cs
 C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Recipes\Index.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Meals\Index.cshtml.g.cs
+C:\Users\HP\Desktop\MealPlanner\WebApp\obj\Debug\netcoreapp3.1\Razor\Pages\Meals\Details.cshtml.g.cs

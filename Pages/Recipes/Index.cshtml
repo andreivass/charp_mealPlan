@@ -24,13 +24,19 @@
     <thead class="thead-dark">
         <tr>
             <th>
+            <a asp-page="./Index" asp-route-sortOrder="@Model.SortName">
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeName)
+            </a>
             </th>
             <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SortDescription">
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeDescription)
+                </a>
             </th>
             <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.SortTime">
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeTime)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Recipe[0].RecipeServings)
