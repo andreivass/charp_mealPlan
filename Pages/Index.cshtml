@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Meal Planner";
+}
+
+<h2>Welcome to the Meal Planner</h2>
+
+<h4>Please enter following parameter to view possible meals:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label class="control-label">How much time do you have to prepare (minutes)?</label>
+                <input asp-for="Recipe.RecipeTime" class="form-control" />
+                <span asp-validation-for="Recipe.RecipeTime" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">How many people are hungry?</label>
+                <input asp-for="Recipe.RecipeServings" class="form-control" />
+                <span asp-validation-for="Recipe.RecipeServings" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+</div>
